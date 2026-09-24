@@ -95,6 +95,42 @@
     });
   }
 
+  /* Formulario de contacto */
+  var contactForm = document.querySelector('.contact-form[data-ajax]');
+  if(contactForm){
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var status = contactForm.querySelector('.form-status');
+      var btn = contactForm.querySelector('button[type="submit"]');
+      var label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      status.className = 'form-status';
+      status.textContent = '';
+      fetch(contactForm.getAttribute('data-ajax'), {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm)
+      }).then(function(res){
+        return res.json().catch(function(){ return {}; }).then(function(data){
+          if(res.ok && String(data.success) !== 'false'){
+            contactForm.reset();
+            status.className = 'form-status is-ok';
+            status.textContent = 'Mensaje enviado. Te responderemos lo antes posible.';
+          } else {
+            throw new Error('send failed');
+          }
+        });
+      }).catch(function(){
+        status.className = 'form-status is-error';
+        status.textContent = 'No hemos podido enviar el mensaje. Escríbenos a masmolireus@gmail.com o por WhatsApp.';
+      }).then(function(){
+        btn.disabled = false;
+        btn.textContent = label;
+      });
+    });
+  }
+
   /* Filtros de galería */
   var filterButtons = document.querySelectorAll('.filters button');
   var galleryItems = document.querySelectorAll('.gallery-grid figure');
