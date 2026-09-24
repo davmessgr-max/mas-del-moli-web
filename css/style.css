@@ -94,9 +94,11 @@ p{ margin: 0 0 1em; }
 .grid{ display: grid; gap: 28px; }
 .split{ display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: center; }
 .split--contact{ grid-template-columns: 1fr 1.1fr; gap: 70px; align-items: start; }
-.split--insta{ grid-template-columns: 1fr minmax(0, 540px); }
+.split--insta{ grid-template-columns: 1fr minmax(0, 24rem); gap: clamp(40px, 8vw, 120px); }
 .insta-embed{ display: flex; justify-content: center; min-width: 0; }
-.insta-embed .instagram-media{ width: 100%; max-width: 540px; min-width: 280px; margin: 0 auto; }
+.insta-frame{ width: min(100%, 24rem); border: 1px solid var(--stone-300); border-radius: 22px; overflow: hidden; background: #fff; box-shadow: var(--shadow-soft); }
+.insta-frame iframe{ display: block; width: 100%; min-width: 0; height: 44rem; border: 0; background: #fff; }
+.btn svg{ flex-shrink: 0; }
 .form-status{ margin: 0; font-size: .9rem; min-height: 1.4em; }
 .form-status.is-ok{ color: var(--olive-dark); }
 .form-status.is-error{ color: var(--terracotta-dark); }
