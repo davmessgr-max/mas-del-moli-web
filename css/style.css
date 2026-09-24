@@ -94,7 +94,8 @@ p{ margin: 0 0 1em; }
 .grid{ display: grid; gap: 28px; }
 .split{ display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: center; }
 .split--contact{ grid-template-columns: 1fr 1.1fr; gap: 70px; align-items: start; }
-.split--insta{ grid-template-columns: 1fr minmax(0, 24rem); gap: clamp(40px, 8vw, 120px); }
+.split--insta{ grid-template-columns: 1fr minmax(0, 24rem); gap: clamp(40px, 8vw, 120px); align-items: start; }
+.section--insta{ padding-top: clamp(36px, 4.5vw, 64px); }
 .insta-embed{ display: flex; justify-content: center; min-width: 0; }
 .insta-frame{ width: min(100%, 24rem); border: 1px solid var(--stone-300); border-radius: 22px; overflow: hidden; background: #fff; box-shadow: var(--shadow-soft); }
 .insta-frame iframe{ display: block; width: 100%; min-width: 0; height: 44rem; border: 0; background: #fff; }
