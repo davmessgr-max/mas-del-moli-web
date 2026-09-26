@@ -446,3 +446,25 @@ p{ margin: 0 0 1em; }
   .footer-grid{ grid-template-columns: 1fr; }
   .footer-bottom{ flex-direction: column; align-items: flex-start; }
 }
+
+/* ---------- buscador de Lodgify (portable search bar) ---------- */
+:root{
+  --ldg-psb-background: #ffffff;
+  --ldg-psb-border-radius: 0.42em;
+  --ldg-psb-box-shadow: 0px 24px 54px 0px rgba(0, 0, 0, 0.1);
+  --ldg-psb-padding: 14px;
+  --ldg-psb-input-background: #ffffff;
+  --ldg-psb-button-border-radius: 3.58em;
+  --ldg-psb-color-primary: #3e3226;
+  --ldg-psb-color-primary-lighter: #9f9993;
+  --ldg-psb-color-primary-darker: #1f1913;
+  --ldg-psb-color-primary-contrast: #ffffff;
+  --ldg-semantic-color-primary: #3e3226;
+  --ldg-semantic-color-primary-lighter: #9f9993;
+  --ldg-semantic-color-primary-darker: #1f1913;
+  --ldg-semantic-color-primary-contrast: #ffffff;
+  --ldg-component-modal-z-index: 999;
+}
+#lodgify-search-bar{ width: 100%; }
+.booking-bar{ max-width: 860px; margin: 28px auto 0; text-align: left; color: var(--stone-800); }
+.booking-bar--hero{ margin: 0 0 20px; }
